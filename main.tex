@@ -1,0 +1,191 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[10pt,oneside, twocolumn]{article}
+\usepackage{_sty/art,_sty/sh,_sty/dom,_sty/pdf,_sty/shx}
+%******************************
+%       *** Title ***
+%******************************
+\title{Emacs}
+\author{bnouri}
+\date{\small \today}
+% \def\YY{2023} \def\MM{April} \def\DD{21}
+% \date{\small \MM~\DD,~\YY}
+
+%******************************
+%   *** Domesti\TT{C-Tunings ***
+%******************************
+\setlength{\parindent}{0pt}
+%\setlength{\parskip}{0.5\baselineskip}
+%
+%******************************
+
+\input{_sty/meta}
+\begin{document}
+\bstctlcite{IEEEexample:BSTcontrol} %Keep it right here to add controls in the bib file into effect.
+\input{_sty/fm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% *** The Body of Document ***
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vfill
+\pagebreak
+%======================================
+\section{Help}
+%======================================
+Youtube:~\href{https://www.youtube.com/watch?v=jPkIaqSh3cA}{The Basics of Emacs as a Text Editor}
+\begin{tabularx}{0.5\textwidth}{lX}
+\TT{C-x k} &Stops the tutorial  \\
+\end{tabularx}
+
+
+%======================================
+\section{Basics}
+%======================================
+\begin{tabularx}{0.5\textwidth}{lX}
+\TT{C-x C+}& zoom in\\
+\TT{C-x C-}& zoom out\\
+\TT{C-x C-c} & exit  \\
+\TT{C-g} & quit a partially entered command\\
+\TT{C-l} & clear screen \& more\\
+\end{tabularx}
+
+%======================================
+\section{Split}
+%======================================
+\begin{tabularx}{0.5\textwidth}{lX}
+\TT{C-x 0} & exit/close current pane/buffer  \\
+\TT{C-x 2} & H-split\\
+\TT{C-x 3} & V-split\\
+\TT{C-x o} & switch between pane\\
+\end{tabularx}
+
+%======================================
+\section{File manager}
+%======================================
+\begin{tabularx}{0.5\textwidth}{lX}
+\TT{C-x C-f} & To open file manager in a pane\\
+\TT{C-x 4f} & opens file manager in the other pane\\
+\TT{C-x C-c} & close the edited file (and decide if save)\\
+\TT{C-x C-s} & to save the file, then \TT{C-x C-C} to close\\
+\end{tabularx}
+
+
+%======================================
+\section{Search/Replace}
+%======================================
+\begin{tabularx}{0.5\textwidth}{lX}
+    \TT{C-s} & open isearch to search forward\\
+    & \TT{C-s} go to next instance\\
+    & \TT{C-r} go reverse\\
+\TT{C-r} & open isearch to search backward\\
+   & \TT{C-r} go previous instance\\
+    \TT{M\% "this" "that"} & Replace "this" with "that"\\
+    \TT{M-u} & capitalize the word cursor is on its begining / is highlighted\\
+    \TT{M-l} & change to all letters of a word to lower case \\
+\end{tabularx}
+
+%======================================
+\section{Spelling}
+%======================================
+\begin{tabularx}{0.5\textwidth}{lX}
+\TT{M-\$} & Spellcheck the word under cursor\\
+\TT{M-u} & capitalize the word cursor is on its begining / is highlighted\\
+\TT{M-l} & change to all letters of a word to lower case \\
+\end{tabularx}
+aspell-en
+%======================================
+\section{Capital}
+%======================================
+\begin{tabularx}{0.5\textwidth}{lX}
+\TT{M-c} & Cpitalize letter under cursor\\
+\TT{M-u} & capitalize the word cursor is on its begining / is highlighted\\
+\TT{M-l} & change to all letters of a word to lower case \\
+\end{tabularx}
+
+%======================================
+\section{Cursor}
+%======================================
+\begin{tabularx}{0.5\textwidth}{lX}
+\TT{C-v} & page-down  \\
+\TT{M-v} & page-up\\
+\TT{C-p} & previous line $\uparrow$\\
+\TT{C-n} & next line $\downarrow$\\
+\TT{C-b} & bkward  $\leftarrow$ char\\
+\TT{C-f} & forward $\rightarrow$ char\\
+\TT{M-b} & bkward  $\leftarrow$ word\\
+\TT{M-f} & forward $\rightarrow$ word\\
+\TT{C-e} & end of line\\
+\TT{C-A} & begining of line\\
+\TT{M-e} & end of sentence \\
+\TT{M-A} & begining of sentence\\
+\TT{M-\} } & Jump forward a para\\
+\TT{M-\{ } & Jump up a para\\
+\TT{M->} & jump to to end of file \\
+\TT{M-<} & Jump to begining of file\\
+\TT{M-g g} & Jump to line \\
+\TT{Esc nn C-n} & Jump "nn" line \\
+\TT{Esc nn C-f} & jump "nn" caharactre\\
+\end{tabularx}
+
+%======================================
+\section{Cut-Copy-Paste}
+%======================================
+\begin{tabularx}{0.5\textwidth}{lX}
+& Use mouse to select text \\
+\TT{space C-F} &  Select char by char \\
+\TT{Space C-n} & Select line by line \\
+\TT{M-w} & copy  \\
+\TT{C-w} & cut \\
+\TT{C-K} & Cuts from cursor to end of line\\
+\TT{C-x bkspace} & Cuts from cursor to begining of line\\
+\TT{C-z char} & Cuts from cursor to next appearance of "char"\\
+\TT{C-y} & paste \\
+\TT{C-x u} & undo\\
+\\
+\TT{Esc n d} & deletes n word starting from cursor\\
+\TT{C-h v kill-ring} & opens history of cut/paste,...\\
+\end{tabularx}
+All cuts, deletes, pastes, ... go to a buffer called Kill-ring.\\
+
+%======================================
+\section{Buffers}
+%======================================
+\begin{tabularx}{0.5\textwidth}{lX}
+\TT{c-x 0} & close the buffer (pane)\\
+\TT{c-x b buffer-name} & Opens the buffer-name, if not exist creats\\
+\TT{c-x k buffer-name} & kills/closes buffer-name \\
+\TT{c-x c-b} & list currently open buffers\\
+\end{tabularx}
+
+%\vfill \pagebreak
+%======================================
+\section{Packages}
+%======================================
+\TT{M-x package-list-packages} $\rightarrow$ \TT{C-s theme} to search "theme"\\
+\begin{tabularx}{0.5\textwidth}{lX}
+\TT{M-x customize-themes} & switch to a buffer named \TT{*Custom Themes*}  \\
+\TT{M-x disable-theme} & enter name of the theme\\
+\TT{M-x eshell} & Opens e-shell\\
+\TT{M-x load-theme}& \texttt{misterioso}\\
+\end{tabularx}
+dichromacy, light-blue, adwaita, manoj-dark, misterioso, tango, tango-dark, tsdh-dark, tsdh-light, wheatgrass, whiteboard, wombat, deeper-blue
+%
+\begin{tabularx}{0.5\textwidth}{lX}
+
+\end{tabularx}    
+
+% %******************************
+% %      *** Appendix ***
+% %******************************
+% %\appendix
+% %\section{title}\label{sec:100}
+% %\section{title}\label{sec:101}
+% %******************************
+% %     *** References ***
+% %******************************
+% %\bibliography{bib/Ref}
+% %
+% %%\input{_xuti/Sample.tex}
+\end{document}
+
+
+
+
